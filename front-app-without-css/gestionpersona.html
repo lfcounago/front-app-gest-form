@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Gestión Persona</title>
+    <script type="text/javascript" src="./js/persona.js"></script>
+    <script type="text/javascript" src="./js/usuario.js"></script>
+    <script type="text/javascript" src="./js/idioma.js"></script>
+    <script type="text/javascript" src="./Langs/Lang_ES.js"></script>
+    <script type="text/javascript" src="./Langs/Lang_EN.js"></script>
+    <script type="text/javascript" src="./Langs/Lang_GA.js"></script>
+    <script type="text/javascript" src="./js/validacionesComunes.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="./Comun/config.js"></script>
+    <script type="text/javascript" src="./js/md5.js"></script>
+  </head>
+  <body onload="esta_autenticado();ponerinvisibleerror();ponerinvisibleformpersona();devolverpersonasajax();setLang();">
+
+    <h1 class="pagina_persona_wellcome"></h1>
+    <div id='id_caja_superior'>
+      <table id="id_tabla_idiomas">
+        <tbody>
+          <tr>
+            <td onclick="setLang('ES');">ES</td>
+            <td onclick="setLang('EN');">EN</td>
+            <td onclick="setLang('GA');">GA</td>
+          </tr>
+        </tbody>
+      </table>
+<!--       Usuario: root
+      <br>
+      <a href="javascript:desconectar();">Desconectar</a> -->
+    </div>
+    <div id='id_caja_error'>
+      <div id='id_texterror'></div><img src="./images/cerrar3.jpg" width="50" height="50" onclick="cerrarMensajeKO();"/>
+    </div>
+    <img class='titulo_add' src='./images/add4.png' height="80" width="80" onclick="crearformADDpersona();">
+    <img class='titulo_search' src='./images/search4.png' height="60" width="60" onclick="crearformSEARCHpersona();">
+    <div>
+      <table id='id_tablaPersonas' border='1'>
+        <thead>    
+          <th class="dni">
+          </th>
+          <th class="nombre_persona">
+          </th>
+          <th class="apellidos_persona">
+          </th>
+          <th class="fechaNacimiento_persona">
+          </th>
+          <th class="direccion_persona">
+          </th>
+          <th class="telefono_persona">
+          </th>
+          <th class="email_persona">
+          </th>
+          <th class="foto_persona">
+          </th>
+          <th class="titulo_edit">
+          </th>
+          <th class="titulo_delete">
+          </th>
+          <th class="titulo_showcurrent">
+          </th>
+        </thead>
+        <tbody id='id_datospersonas'>
+        </tbody>
+      </table>
+    </div>
+    <div id='id_caja_formulario_persona'>
+      <form id='id_form_persona' name='form_persona' method='post'>
+
+        <label for='id_dni'></label>
+        <input class="text_formato_dni" type='text' id='id_dni' name='dni' placeholder=""></input>
+        <br>
+        <label class="nombre_persona"></label>
+        <input class="text_formato_nombre_persona" type='text' id='id_nombre_persona' name='nombre_persona'></input>
+        <br>
+        <label for='apellidos_persona'></label>
+        <input class="text_formato_apellidos_persona" type='text' id='id_apellido_persona' name='apellidos_persona' placeholder=""></input>
+        <br>
+        <label for='fechaNacimiento_persona'></label>
+        <input class="text_formato_fechaNacimiento_persona" type='date' id='id_fechaNacimiento_persona' name='fechaNacimiento_persona' placeholder=""></input>
+        <br>
+        <label for='direccion_persona'></label>
+        <input class="text_formato_direccion_persona" type='text' id='id_direccion_persona' name='direccion_persona' placeholder=""></input>
+        <br>
+        <label for='telefono_persona'></label>
+        <input class="text_formato_telefono_persona" type='text' id='id_telefono_persona' name='telefono_persona' placeholder=""></input>
+        <br>
+        <label for='email_persona'></label>
+        <input class="text_formato_email_persona" type='email' id='id_email_persona' name='email_persona' placeholder=""></input>
+        <br>
+        <label for='foto_persona'></label>
+        <input class="text_formato_foto_persona" type='text' id='id_foto_persona' name='foto_persona' placeholder=""></input>
+        <br>
+
+      </form>
+    </div>
+  <div>
+    <a href='menu.html'><p class='titulo_volver'></p></a>
+  </body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <title>Persona</title>
+    <style>
+        .anchor{
+        border: 1px solid #000a;
+        border-radius: 5px;
+        padding: 5px;
+        }
+
+        #desconexion{
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        }
+
+        #selectLenguaje{
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+        #tablaPersona{
+            border: 1px solid #000;
+        }
+        td,th{
+            border: 1px solid #000;
+            padding: 4px;
+            text-align: center;
+        }
+
+        #contenedorFormulario{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <a id="desconexion" class="anchor" href="./login.html">Desconectar</a>                  <!-- idioma -->
+    <select id="selectLenguaje">
+        <option value="ES">ES</option>
+        <option value="GAL">GAL</option>
+        <option value="EN">EN</option>
+    </select>
+    <p id="usuarioSesion"></p>  <!-- idioma al 'Usuario:' -->
+    <button id="botonInsertar" >
+        <img src="../estaticos/imagenes/fotoInsertar.svg"/>
+    </button>
+    <button id="botonBuscar">
+        <img src="../estaticos/imagenes/fotoBuscar.svg"/>
+    </button>
+    <br/><br/>
+    <table id="tablaPersona">
+        <tr>
+            <th>DNI</th>                  <!-- idioma -->
+            <th>Nombre</th>                  <!-- idioma -->
+            <th>Apellidos</th>                  <!-- idioma -->
+            <th>Fecha nacimiento</th>                  <!-- idioma -->
+            <th>Dirección</th>                  <!-- idioma -->
+            <th>Teléfono</th>                  <!-- idioma -->
+            <th>Email</th>                  <!-- idioma -->
+            <th>Foto</th>                  <!-- idioma -->
+            <th>Editar</th>                  <!-- idioma -->
+            <th>Eliminar</th>                  <!-- idioma -->
+            <th>Detalle</th>                  <!-- idioma -->
+        </tr>
+<!--         <tr>
+            <td>12345678Z</td>
+            <td>Juan José</td>
+            <td>Álvarez Blanco</td>
+            <td>2020-12-03</td>
+            <td>su casa</td>
+            <td>123456789</td>
+            <td>juan@gmail.com</td>
+            <td>./src/imagnenes/juan</td>
+            <td>
+                <button>
+                    <img src="../estaticos/imagenes/fotoEditar.svg"/>
+                </button>
+            </td>
+            <td>
+                <button>
+                    <img src="../estaticos/imagenes/fotoEliminar.svg"/>
+                </button>
+            </td>
+            <td>
+                <button>
+                    <img src="../estaticos/imagenes/fotoDetalle.svg"/>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>12345678Z</td>
+            <td>Juan José</td>
+            <td>Álvarez Blanco</td>
+            <td>2020-12-03</td>
+            <td>su casa</td>
+            <td>123456789</td>
+            <td>juan@gmail.com</td>
+            <td>./src/imagnenes/juan</td>
+            <td>
+                <button>
+                    <img src="../estaticos/imagenes/fotoEditar.svg"/>
+                </button>
+            </td>
+            <td>
+                <button>
+                    <img src="../estaticos/imagenes/fotoEliminar.svg"/>
+                </button>
+            </td>
+            <td>
+                <button>
+                    <img src="../estaticos/imagenes/fotoDetalle.svg"/>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>12345678Z</td>
+            <td>Juan José</td>
+            <td>Álvarez Blanco</td>
+            <td>2020-12-03</td>
+            <td>su casa</td>
+            <td>123456789</td>
+            <td>juan@gmail.com</td>
+            <td>./src/imagnenes/juan</td>
+            <td>
+                <button>
+                    <img src="../estaticos/imagenes/fotoEditar.svg"/>
+                </button>
+            </td>
+            <td>
+                <button>
+                    <img src="../estaticos/imagenes/fotoEliminar.svg"/>
+                </button>
+            </td>
+            <td>
+                <button>
+                    <img src="../estaticos/imagenes/fotoDetalle.svg"/>
+                </button>
+            </td>
+        </tr> -->
+    </table>
+    <br/>
+    <div id="contenedorFormulario">     <!-- mantener el mismo id en todos los html -->
+        <form id="formularioPersona">
+            <label>DNI</label>                  <!-- idioma -->
+            <input id="dniInput" name="dniInput" type="text"/><br/>
+            <label>Nombre</label>                  <!-- idioma -->
+            <input id="nombreInput" name="nombreInput" type="text"/><br/>
+            <label>Apellidos</label>                  <!-- idioma -->
+            <input id="apellidosInput" name="apellidosInput" type="text"/><br/>
+            <label>Fecha nacimiento</label>                  <!-- idioma -->
+            <input id="fechaInput" name="fechaInput" max="2022-11-13" type="date"/><br/>
+            <label>Dirección</label>                  <!-- idioma -->
+            <input id="direccionInput" name="direccionInput" type="text"/><br/>
+            <label>Teléfono</label>                  <!-- idioma -->
+            <input id="telefonoInput" name="telefonoInput" min="0" type="number"/><br/>
+            <label>Email</label>                  <!-- idioma -->
+            <input id="emailInput" name="emailInput" type="text"/><br/>
+            <label>Foto</label>                  <!-- idioma -->
+            <input id="fotoInput" name="fotoInput" max="1" type="file" accept="image/*"/><br/>
+
+            <input type="submit" id="inputSubmitFormulario" value="Enviar"/>                  <!-- idioma y mantener el mismo id en todos los html -->
+        </form>
+    </div>
+    <br/>
+    <a id="volver" class="anchor" href="./menu.html">Volver</a>                  <!-- idioma -->
+    <script type="module" src="../recursos/indexPersona.js"></script>
+</body>
+</html>
